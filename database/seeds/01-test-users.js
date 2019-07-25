@@ -5,9 +5,9 @@ exports.seed = function(knex) {
     .then(function() {
       // Inserts seed entries
       return knex('shire').insert([
-        { name: 'rowValue1', age: 22 },
-        { name: 'rowValue2', age: 22 },
-        { name: 'rowValue3', age: 22 }
+        { name: 'frodo', age: 22 },
+        { name: 'sam', age: 22 },
+        { name: 'merry', age: 22 }
       ]);
     });
 };
