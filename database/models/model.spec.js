@@ -31,4 +31,9 @@ describe('Test case for database', () => {
     user = await shireModel.getAll();
     expect(user).toHaveLength(1);
   });
+  it('should get single user', async () => {
+    await shireModel.addUser({ name: 'clark', age: 25 });
+    let user = await shireModel.getByName('clark');
+    expect(user).toMatchObject([{ name: 'clark', age: 25 }]);
+  });
 });
