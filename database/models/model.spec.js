@@ -16,5 +16,19 @@ describe('Test case for database', () => {
     await shireModel.addUser({ name: 'pascal', age: 2 });
     user = await shireModel.getAll();
     expect(user).toHaveLength(1);
+    expect(user).toMatchObject([{ name: 'pascal', age: 2 }]);
+  });
+  it('should delete a user', async () => {
+    let users = await shireModel.getAll();
+    expect(users).toMatchObject({});
+
+    await shireModel.addUser({ name: 'pascal', age: 2 });
+    await shireModel.addUser({ name: 'joe', age: 45 });
+    user = await shireModel.getAll();
+    expect(user).toHaveLength(2);
+
+    await shireModel.deleteUser(1);
+    user = await shireModel.getAll();
+    expect(user).toHaveLength(1);
   });
 });

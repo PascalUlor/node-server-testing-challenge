@@ -11,4 +11,9 @@ describe('server running', () => {
         expect(res.body).toEqual({ status: 200, message: 'Welcome' });
       });
   });
+  it('[GET] / Fails!', () => {
+    return request(app)
+      .get('/wrong')
+      .expect(404);
+  });
 });

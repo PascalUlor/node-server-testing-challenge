@@ -7,6 +7,12 @@ const getAll = async () => {
 
 const addUser = async user => {
   const [id] = await db('shire').insert(user);
-  return id;
+  return db('shire').where({ id });
 };
-module.exports = { getAll, addUser };
+
+const deleteUser = async id => {
+  return db('shire')
+    .where({ id })
+    .del();
+};
+module.exports = { getAll, addUser, deleteUser };
