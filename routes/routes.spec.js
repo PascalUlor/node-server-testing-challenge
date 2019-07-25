@@ -16,15 +16,6 @@ describe('Controller routes', () => {
       .expect(201);
   });
 
-  //   it('test should return 409 if user already exists', () => {
-  //     return request
-  //       .post('/api/user')
-  //       .send({
-  //         name: 'steve',
-  //         age: 25
-  //       })
-  //       .expect(409);
-  //   });
   it('delete selected user', () => {
     return request
       .del(`/api/user/${1}`)
