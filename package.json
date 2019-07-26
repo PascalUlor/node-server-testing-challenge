@@ -1,30 +1,35 @@
 {
-  "name": "node-server-testing",
+  "name": "lambda-testing-backend",
   "version": "1.0.0",
   "description": "Node Server Testing Challenge",
   "main": "server.js",
   "scripts": {
-    "test": "jest --watch"
-  },
-  "jest": {
-    "testEnvironment": "node"
+    "start": "index.js",
+    "dev": "nodemon index.js",
+    "test": "cross-env DB_ENV=test jest --watchAll --verbose"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LambdaSchool/node-server-testing.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "pascal ulor",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LambdaSchool/node-server-testing/issues"
   },
   "homepage": "https://github.com/LambdaSchool/node-server-testing#readme",
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "knex": "^0.19.1",
+    "knex-cleaner": "^1.2.1",
+    "sqlite3": "^4.0.9"
   }
 }
